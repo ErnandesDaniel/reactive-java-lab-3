@@ -16,13 +16,10 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3, time = 1)
 public class ActiveUsersListBenchmark {
 
-    @Param({"3000","5000", "50000", "250000"})
+    @Param({"500", "2000"})
     public int userCount;
 
-//    @Param({"3000", "5000"})
-//    public int userCount;
-
-    @Param({"0", "2"})
+    @Param({"2"})
     public int delayMicros;
 
     private List<User> users;
@@ -47,6 +44,12 @@ public class ActiveUsersListBenchmark {
     @Benchmark
     public void customSpliterator(Blackhole bh) {
         List<User> result = ActiveUsersListStatsGenerator.collectActiveWithCustomSpliterator(users, delayMicros);
+        bh.consume(result);
+    }
+
+    @Benchmark
+    public void rxJavaObservable(Blackhole bh) {
+        List<User> result = ActiveUsersListStatsGenerator.collectActiveWithRxJavaObservable(users, delayMicros);
         bh.consume(result);
     }
 

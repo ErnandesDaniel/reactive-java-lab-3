@@ -30,6 +30,13 @@
             <version>${jmh.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- RxJava 3 -->
+        <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>3.1.8</version>
+        </dependency>
     </dependencies>
 
     <build>
