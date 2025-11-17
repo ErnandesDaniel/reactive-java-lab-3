@@ -19,7 +19,7 @@ public class ActiveUsersListBenchmark {
     @Param({"500", "2000"})
     public int userCount;
 
-    @Param({"10"})
+    @Param({"50"})
     public int delayMicros;
 
     private List<User> users;
@@ -29,16 +29,16 @@ public class ActiveUsersListBenchmark {
         users = UserGenerator.generateUsers(userCount);
     }
 
-//    @Benchmark
-//    public void parallelStreams(Blackhole bh) {
-//        List<User> result = ActiveUsersListStatsGenerator.collectActiveWithParallelStreams(users, delayMicros);
-//        bh.consume(result);
-//    }
-//
-//    @Benchmark
-//    public void rxJavaObservable(Blackhole bh) {
-//        List<User> result = ActiveUsersListStatsGenerator.collectActiveWithRxJavaObservable(users, delayMicros);
-//        bh.consume(result);
-//    }
+    @Benchmark
+    public void parallelStreams(Blackhole bh) {
+        List<User> result = ActiveUsersListStatsGenerator.collectActiveWithParallelStreams(users, delayMicros);
+        bh.consume(result);
+    }
+
+    @Benchmark
+    public void rxJavaObservable(Blackhole bh) {
+        List<User> result = ActiveUsersListStatsGenerator.collectActiveWithRxJavaObservable(users, delayMicros);
+        bh.consume(result);
+    }
 
 }

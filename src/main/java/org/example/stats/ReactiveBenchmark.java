@@ -24,9 +24,9 @@ public class ReactiveBenchmark {
         bh.consume(result);
     }
 
-//    @Benchmark
-//    public void collectActiveWithFlowable(Blackhole bh) {
-//        List<User> result = ReactiveStatsWithFlowable.collectActiveWithFlowable(userCount);
-//        bh.consume(result);
-//    }
+    @Benchmark
+    public void collectActiveWithFlowable(Blackhole bh) {
+        List<User> result = ReactiveStatsWithFlowable.collectActiveWithFlowable(userCount);
+        bh.consume(result);
+    }
 }

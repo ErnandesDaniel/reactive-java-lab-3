@@ -19,7 +19,7 @@ public class ActiveUsersBenchmark {
     @Param({"500", "2000"})
     public int userCount;
 
-    @Param({"50", "500", "1000"})
+    @Param({"50"})
     public int delayMicros;
 
     private List<User> users;

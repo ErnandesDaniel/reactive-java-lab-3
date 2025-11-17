@@ -86,11 +86,11 @@ public class ReactiveStatsWithFlowable {
         return subscriber.getActiveCount();
     }
 
-//    // Метод для сбора списка с Flowable и собственным Subscriber
-//    public static List<User> collectActiveWithFlowable(int userCount) {
-//        StatsSubscriber subscriber = new StatsSubscriber(userCount);
-//        generateUsersFlowable(userCount)
-//                .blockingSubscribe(subscriber);
-//        return subscriber.getActiveUsers();
-//    }
+    // Метод для сбора списка с Flowable и собственным Subscriber
+    public static List<User> collectActiveWithFlowable(int userCount) {
+        StatsSubscriber subscriber = new StatsSubscriber(userCount);
+        generateUsersFlowable(userCount)
+                .blockingSubscribe(subscriber);
+        return subscriber.getActiveUsers();
+    }
 }
