@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3, time = 1)
 public class ActiveUsersBenchmark {
 
-    @Param({"500", "2000"})
+    @Param({"500", "2000", "50000", "100000", "200000"})
     public int userCount;
 
     @Param({"2"})
@@ -29,11 +29,11 @@ public class ActiveUsersBenchmark {
         users = UserGenerator.generateUsers(userCount);
     }
 
-    @Benchmark
-    public void oneStream(Blackhole bh) {
-        long result = ActiveUsersStatsGenerator.countActiveWithOneStream(users, delayMicros);
-        bh.consume(result);
-    }
+//    @Benchmark
+//    public void oneStream(Blackhole bh) {
+//        long result = ActiveUsersStatsGenerator.countActiveWithOneStream(users, delayMicros);
+//        bh.consume(result);
+//    }
 
     @Benchmark
     public void parallelStreams(Blackhole bh) {
@@ -41,11 +41,11 @@ public class ActiveUsersBenchmark {
         bh.consume(result);
     }
 
-    @Benchmark
-    public void customSpliterator(Blackhole bh) {
-        long result = ActiveUsersStatsGenerator.countActiveWithCustomSpliterator(users, delayMicros);
-        bh.consume(result);
-    }
+//    @Benchmark
+//    public void customSpliterator(Blackhole bh) {
+//        long result = ActiveUsersStatsGenerator.countActiveWithCustomSpliterator(users, delayMicros);
+//        bh.consume(result);
+//    }
 
     @Benchmark
     public void rxJavaObservable(Blackhole bh) {
