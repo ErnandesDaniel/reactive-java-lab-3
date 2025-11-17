@@ -6,9 +6,7 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Spliterator;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 //Статистика по активным пользователям - возвращает список активных пользователей
 public class ActiveUsersListStatsGenerator {
@@ -42,20 +40,9 @@ public class ActiveUsersListStatsGenerator {
                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
-    // Stream API с одним потоком
-    public static List<User> collectActiveWithOneStream(List<User> users, long delayMicros) {
-        return collectActiveFromStream(users.stream(), delayMicros);
-    }
-
     // Stream API с параллельными потоками
     public static List<User> collectActiveWithParallelStreams(List<User> users, long delayMicros) {
         return collectActiveFromStream(users.parallelStream(), delayMicros);
-    }
-
-    public static List<User> collectActiveWithCustomSpliterator(List<User> users, long delayMicros) {
-        Spliterator<User> spliterator = new ActiveUsersListSpliterator(users, 0, users.size(), delayMicros);
-        return StreamSupport.stream(spliterator, true)
-                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
     // RxJava Observable с многопоточной обработкой для сбора списка

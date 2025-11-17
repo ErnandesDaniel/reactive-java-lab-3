@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3, time = 1)
 public class ReactiveBenchmark {
 
-    @Param({"100000", "200000", "500000"})
+    @Param({"100000", "200000"})
     public int userCount;
 
     @Benchmark
