@@ -37,7 +37,7 @@ https://docs.google.com/spreadsheets/d/1YQtn9SlXpid_3mdb-ljrFWvucT7zg3RhqUgDLJdb
 
 
 Результаты
-
+Benchmark                                                       (delayMicros)  (userCount)  Mode  Cnt    Score    Error  Units
 ActiveUsers.ActiveUsersBenchmark.customSpliterator                      2          500  avgt    3      0,136 ?    0,027  ms/op
 ActiveUsers.ActiveUsersBenchmark.customSpliterator                      2         2000  avgt    3      0,451 ?    0,120  ms/op
 ActiveUsers.ActiveUsersBenchmark.oneStream                              2          500  avgt    3      1,023 ?    0,009  ms/op
