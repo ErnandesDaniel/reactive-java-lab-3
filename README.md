@@ -41,16 +41,15 @@ RxJava значительно быстрее — в 7–9 раз!
 Результаты
 
 Benchmark                                                 (delayMicros)  (userCount)  Mode  Cnt     Score      Error  Units
-ActiveUsers.ActiveUsersBenchmark.parallelStreams                     50          500  avgt    3   733,141 ?   86,749  ms/op
-ActiveUsers.ActiveUsersBenchmark.parallelStreams                     50         2000  avgt    3  2939,464 ?  133,498  ms/op
-ActiveUsers.ActiveUsersBenchmark.rxJavaObservable                    50          500  avgt    3    87,388 ?   39,946  ms/op
-ActiveUsers.ActiveUsersBenchmark.rxJavaObservable                    50         2000  avgt    3   310,941 ?   86,408  ms/op
-ActiveUsersList.ActiveUsersListBenchmark.parallelStreams             50          500  avgt    3   734,991 ?   26,821  ms/op
-ActiveUsersList.ActiveUsersListBenchmark.parallelStreams             50         2000  avgt    3  2942,077 ?   44,968  ms/op
-ReactiveBenchmark.countActiveWithFlowable                           N/A       100000  avgt    3  2415,483 ? 1626,242  ms/op
-ReactiveBenchmark.countActiveWithFlowable                           N/A       200000  avgt    3  4790,837 ? 3458,545  ms/op
-
-
-
+ActiveUsers.ActiveUsersBenchmark.parallelStreams                     50          500  avgt    3   738,192 ?   42,093  ms/op
+ActiveUsers.ActiveUsersBenchmark.parallelStreams                     50         2000  avgt    3  2931,664 ?  176,322  ms/op
+ActiveUsers.ActiveUsersBenchmark.rxJavaObservable                    50          500  avgt    3    88,943 ?   43,073  ms/op
+ActiveUsers.ActiveUsersBenchmark.rxJavaObservable                    50         2000  avgt    3   310,479 ?  121,472  ms/op
+ActiveUsersList.ActiveUsersListBenchmark.parallelStreams             50          500  avgt    3   733,481 ?   47,980  ms/op
+ActiveUsersList.ActiveUsersListBenchmark.parallelStreams             50         2000  avgt    3  2942,108 ?  173,634  ms/op
+ReactiveBenchmark.collectActiveWithFlowable                         N/A       100000  avgt    3  2499,650 ? 4730,296  ms/op
+ReactiveBenchmark.collectActiveWithFlowable                         N/A       200000  avgt    3  4886,128 ?  252,220  ms/op
+ReactiveBenchmark.countActiveWithFlowable                           N/A       100000  avgt    3  2650,729 ? 3389,061  ms/op
+ReactiveBenchmark.countActiveWithFlowable                           N/A       200000  avgt    3  6046,212 ? 7543,503  ms/op
 
 
